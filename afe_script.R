@@ -16,3 +16,5 @@ for (i in 1:6) {
 convert("data/bdd_master.xlsx", "data/quebec2020_jf_master.csv")
 
 # suite du code----
+
+truc.
