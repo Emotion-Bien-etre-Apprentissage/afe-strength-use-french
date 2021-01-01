@@ -17,9 +17,4 @@ convert("data/bdd_master.xlsx", "data/quebec2020_jf_master.csv")
 
 # suite du code----
 
-<<<<<<< Updated upstream
-truc.
-=======
 source("src/anal_val_int_v.2.R")
-
->>>>>>> Stashed changes
