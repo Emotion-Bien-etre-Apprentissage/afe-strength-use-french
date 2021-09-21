@@ -5,7 +5,7 @@ date: "généré le 19 décembre 2020"
 output: 
   bookdown::word_document2:
     citation_package: none
-    reference_docx: "/template/template.docx"
+    reference_docx: "template/template.docx"
     toc: false
   bookdown::html_document2:
     citation_package: none
