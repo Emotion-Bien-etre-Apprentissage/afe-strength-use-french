@@ -14,7 +14,7 @@ output:
     keep_tex: false
 ---
 
-# Auteurs 
+# Auteurs (ordre à déterminer rapidement)
 Nicolas Bressoud, Rebecca Shankland, Philippe Gay, Andrea C. Samson, Philippe Dubreuil, Karel Belleville, Jacques Forest
 
 Je me base sur la structure du travail de Bernet, Karsenti, & Roy (2014) qui ont traduit et validé la SEM en français.
@@ -48,7 +48,7 @@ importance du problème, etc
 # Cadre théorique
 1 à 2 pages
 historique, modèle, focus, description
-conclure par intention de l'article.
+conclure par intention de l'article (dont échelle courte? échelle adaptée aux enfants?).
 
 # Méthode
 
@@ -70,6 +70,16 @@ rétrotraduction. A fusionner avec étape ci-dessus.
 
 ### DONE??? évaluation de la version expérimentale par un prétest
 l’évaluation de la clarté des énoncés par des membres de la population cible par un prétest.
+
+
+# Résultats
+indiquer nos critères pour décider ceci ou cela.
+Alphas de cronbach
+tableau de l'AFE (Items, facteurs de corrélation, communauté, ...)
+corrélations entre les différentes dimensions (par nécessaire chez nous)
+
+
+
 
 ### DONE??? évaluation de la validité concomitante et de contenu
 non. Pas pertinent.
@@ -95,16 +105,19 @@ matrice de corrélation
 tracé d'effondrement.
 ACP
 
-### établissement de normes
+? AFC?
 
-# Résultats
-indiquer nos critères pour décider ceci ou cela.
-Alphas de cronbach
-tableau de l'AFE (Items, facteurs de corrélation, communauté, ...)
-corrélations entre les différentes dimensions (par nécessaire chez nous)
+### établissement de normes?
 
-proposer une version courte (environ 6 ou 7 items) plus "rentable" selon les items plus discriminants (quanti et quali)....
+###proposer une version courte? 
+environ 6 ou 7 items car plus "rentable", choix selon les items plus discriminants (quanti et quali)....
 ? esk inverser qqs items ?
+
+
+
+
+
+
 
 # Discussion
 texte court
