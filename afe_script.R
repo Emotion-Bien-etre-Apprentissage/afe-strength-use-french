@@ -459,7 +459,7 @@ factanal(covmat=cov(suQConv.df), factors=3, rotation = "promax")
 round(alphaDf.fct(cov(suQConv.df, use="pairwise"), suParam.df), 2)
 round(ICC.CK.fct(su.df, .05), 2)#For the reliability of the scale, the ICC(C,K) formula given by McGraw and Wong (1996) was implemented in R . The ICC(C,K) is equal to the alpha coefficient (Cronbach, 1951) but offer the advantage to have a CI. 
 
-
+# zizi
 # internal consistency----
 
 col2rowRF.fct(su.df) -> suRF.df
