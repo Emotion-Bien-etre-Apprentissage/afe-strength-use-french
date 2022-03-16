@@ -420,6 +420,7 @@ summary(su.df)
 # remove all NA
 su.df <- na.omit(su.df) 
 summary(su.df)
+boxplot(su.df, notch = T)
 
 # compute scores
 min(su.df, na.rm=T); max(su.df, na.rm=T)
