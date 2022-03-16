@@ -68,10 +68,10 @@ raconter comment on a traduit. Selon quelle méthode de traduction.
 ### évaluation et modification de la première version
 rétrotraduction. A fusionner avec étape ci-dessus.
 
-### évaluation de la version expérimentale par un prétest
+### DONE??? évaluation de la version expérimentale par un prétest
 l’évaluation de la clarté des énoncés par des membres de la population cible par un prétest.
 
-### évaluation de la validité concomitante et de contenu
+### DONE??? évaluation de la validité concomitante et de contenu
 non. Pas pertinent.
 
 ### évaluation de la fidélité
@@ -102,6 +102,9 @@ indiquer nos critères pour décider ceci ou cela.
 Alphas de cronbach
 tableau de l'AFE (Items, facteurs de corrélation, communauté, ...)
 corrélations entre les différentes dimensions (par nécessaire chez nous)
+
+proposer une version courte (environ 6 ou 7 items) plus "rentable" selon les items plus discriminants (quanti et quali)....
+? esk inverser qqs items ?
 
 # Discussion
 texte court

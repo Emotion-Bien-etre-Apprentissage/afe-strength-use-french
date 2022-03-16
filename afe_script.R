@@ -36,7 +36,7 @@ library(moments)
 # Préparation des fonctions "maison"----
 
 # Function sumScoreDf----
-# Décrire ce qu'elle fait
+# calculer, à partir des données brutes, les scores composites (moyennes ou sommes des scores par dimension) = varVD.df
 
 "sumScoreDf.fct" <-
   function(dataConv.df, param.df) {
@@ -79,7 +79,8 @@ library(moments)
   }
 
 # Function convScoreDf----
-# Décrire ce qu'elle fait
+# calculer, à partir des données brutes, les scores convertis (items à inverser) = varQConv.df
+
 
 "convScoreDf.fct" <-
   function(data.df, param.v, scoreMin, scoreMax) {
@@ -93,7 +94,7 @@ library(moments)
   }
 
 # Function col2rowRF----
-# Décrire ce qu'elle fait
+# pas obligatoire (doit organiser les données pour corrélations bivariées)...
 
 "col2rowRF.fct" <- function(data.df) {
   # Mathieu d'Acremont
@@ -110,7 +111,7 @@ library(moments)
 }
 
 # Function corTestDf----
-# Décrire ce qu'elle fait
+# permet d'obntenir les corrélations avec les IC pour les variables choisies d'un DF
 
 corTestDf.fct <- function(first.tmp, second.tmp, method="pearson", subset=NULL) {
   # Mathieu d'Acremont, Mathieu.Dacremont@pse.unige.ch
@@ -207,7 +208,7 @@ corTestDf.fct <- function(first.tmp, second.tmp, method="pearson", subset=NULL) 
 }
 
 # Function formCor----
-# Décrire ce qu'elle fait
+# mise en forme selon la fonction précédente corDf
 
 formCor.fct <- function(cor.li, digits=2) {
   # format correlations returned by cor.test.fct
@@ -232,7 +233,7 @@ formCor.fct <- function(cor.li, digits=2) {
 
 
 # Function ICC.C1----
-# Décrire ce qu'elle fait
+# calcule les IC pour les alpha (pas obligatoire)
 
 ICC.C1.fct <- function(data.df, alpha) {
   # calculate the intra-class corelation, consistency version
@@ -286,7 +287,7 @@ ICC.C1.fct <- function(data.df, alpha) {
 }
 
 # Function ICC.CK----
-# Décrire ce qu'elle fait
+# calcule ICC (pas obligatoire)
 
 ICC.CK.fct <- function(data.df, alpha) {
   # calculate the intra-class corelation, consistency version
@@ -340,7 +341,7 @@ ICC.CK.fct <- function(data.df, alpha) {
 }
 
 # Function alphaDf----
-# Décrire ce qu'elle fait
+# calcule les alpha pour toutes les dimension de varQConv selon param.df
 
 "alphaDf.fct" <-
   function(qConv.cov, param.df) {
@@ -364,7 +365,7 @@ ICC.CK.fct <- function(data.df, alpha) {
   }
 
 # Function corSemiParCI----
-# Décrire ce qu'elle fait
+# calcule cor semi partielle avec IC (pas oblgatoire)
 
 corSemiParCI.fct <- function(Y, lm.0A, lm.0B, sign=+1) {
   # calc semi partial cor with CI for a predictor of a linear regression
@@ -398,8 +399,7 @@ corSemiParCI.fct <- function(Y, lm.0A, lm.0B, sign=+1) {
 
 
 # Function suParam----
-# Décrire ce que fait la fonction.
-# Vérifier ce que j'ai fait ici...
+# créer une fonction pour inverser les items de la SUS et calculer les scores composites
 
 suParamG <- c(1,1,1,1,1,1,1,1,1,1,1,1,1,1)
 suParam.df <- data.frame(suParamG)
@@ -453,13 +453,30 @@ factanal(covmat=cov(suQConv.df), factors=2, rotation = "promax")
 factanal(covmat=cov(suQConv.df), factors=3, rotation = "varimax")
 factanal(covmat=cov(suQConv.df), factors=3, rotation = "promax")
 
+
+fit <- princomp(suQConv.df, cor=TRUE)
+summary(fit) # print variance accounted for
+loadings(fit) # pc loadings
+plot(fit,type="lines") # scree plot
+fit$scores # the principal components
+biplot(fit) 
+
+# PCA Variable Factor Map
+library(FactoMineR)
+result <- PCA(suQConv.df) # graphs generated automatically 
+
+
+# => à vue de nez: garder items 7-8-5-14-11-13-(9)
+
+
+
 # reliability----
 
 # alpha----
 round(alphaDf.fct(cov(suQConv.df, use="pairwise"), suParam.df), 2)
 round(ICC.CK.fct(su.df, .05), 2)#For the reliability of the scale, the ICC(C,K) formula given by McGraw and Wong (1996) was implemented in R . The ICC(C,K) is equal to the alpha coefficient (Cronbach, 1951) but offer the advantage to have a CI. 
 
-# zizi
+
 # internal consistency----
 
 col2rowRF.fct(su.df) -> suRF.df
