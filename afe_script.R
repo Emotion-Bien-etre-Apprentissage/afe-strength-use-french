@@ -1,5 +1,7 @@
 # Partie NBR----
 
+# Phil est chou
+
 # Chargement des libraries----
 
 library(tidyverse) # manipulation selon les règles tidy
