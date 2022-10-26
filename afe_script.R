@@ -408,16 +408,35 @@ suParam.df <- data.frame(suParamG)
 save(file="output/suParam.df", suParam.df)
 
 
-# Load data----
+
+
+
+
+
+
+############################################################
+############### Load data----
+############################################################
+library(readxl)
 
 read.csv(file="data/quebec2020_jf_master.csv", row.names=1) -> bdd.df
+bdd1.df <- read_excel("data/bdd_split1_supprNAall.xlsx")
+
 names(bdd.df)
 names(bdd.df[15:28])
 su.df <- bdd.df[15:28]
+
+names(bdd1.df)
+names(bdd1.df[16:29])
+su.df <- bdd1.df[16:29]
+
+
+
 names(su.df)
 
 str(su.df)
 summary(su.df)
+
 
 # remove all NA
 su.df <- na.omit(su.df) 
@@ -449,6 +468,9 @@ scree.plot(suQConv.df, sim=100)
 scree.plot(suQConv.df, sim=10)
 factanal(covmat=cov(suQConv.df), factors=1)
 
+factanal(covmat=cov(suQConv.df), factors=1, rotation = "varimax")
+factanal(covmat=cov(suQConv.df), factors=1, rotation = "promax")
+
 factanal(covmat=cov(suQConv.df), factors=2, rotation = "varimax")
 factanal(covmat=cov(suQConv.df), factors=2, rotation = "promax")
 
@@ -462,6 +484,16 @@ loadings(fit) # pc loadings
 plot(fit,type="lines") # scree plot
 fit$scores # the principal components
 biplot(fit) 
+
+
+library(nFactors)
+
+ev <- eigen(cor(suQConv.df)) # get eigenvalues
+ap <- parallel(subject=nrow(suQConv.df),var=ncol(suQConv.df),
+               rep=100,cent=.05)
+nS <- nScree(x=ev$values, aparallel=ap$eigen$qevpea)
+plotnScree(nS) 
+
 
 # PCA Variable Factor Map
 library(FactoMineR)
@@ -495,3 +527,4 @@ mean(su.lower)
 #ICC1.CI(X, Subj, suRF.df) 
 #ICC2.CI(X, Subj, suRF.df) 
 round(ICC.C1.fct(su.df, .05), 2)#intra-class correlation with 95% IC
+
